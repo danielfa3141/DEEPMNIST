@@ -217,7 +217,7 @@ class WaveletsForestRegressor:
         errors = []
         step = 10
         power = 2
-
+        logging.getLogger().setLevel(logging.INFO)
         paths, n_nodes_ptr = self.rf.decision_path(self.X)
         predictions = np.zeros(np.shape(self.y))
         for m_step in range(2, m, step):
