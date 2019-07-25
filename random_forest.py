@@ -54,6 +54,7 @@ class WaveletsForestRegressor:
     :y: Labels, each row is given as a vertex on the simplex.
     '''
 
+        logging.getLogger().setLevel(logging.INFO)
         logging.info('Fitting %s samples' % np.shape(X_raw)[0])
         X = (X_raw - np.min(X_raw, 0)) / (np.max(X_raw, 0) - np.min(X_raw, 0))
         X = np.nan_to_num(X)
